@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <div id="main-section">
+        <button id="add">Add</button>
+        <table border="1" id="postsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div id="form-section" class="container">
+        <div>
+            <label for="id">id:</label>
+            <input type="number" id="id" required>
+            <label for="title">title:</label>
+            <input type="text" id="title" required>
+            <label for="body">body:</label>
+            <input type="text" id="body" required>  
+            <button id="submit">Submit</button>
+            <button id="delete" style="display:none;">Delete</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

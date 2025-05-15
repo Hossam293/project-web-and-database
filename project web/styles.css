@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+#delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}    
+
+#add {
+    background-color: blueviolet; 
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#main-section {
+    display: block;
+}
+
+#form-section {
+    display: none;
+}
