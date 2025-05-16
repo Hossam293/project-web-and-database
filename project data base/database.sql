@@ -87,3 +87,22 @@ INSERT INTO Alert VALUES
 (9, 8, 9, 'Low moisture warning', 'Medium', '2025-05-10 16:10:00'),
 (10, 9, 10, 'Critical condition', 'High', '2025-05-10 17:10:00');
 
+SELECT * FROM Device WHERE user_id = 1;
+
+SELECT * FROM SensorData WHERE water_needed = TRUE;
+
+SELECT user_id, COUNT(*) AS device_count FROM Device GROUP BY user_id HAVING COUNT(*) > 1;
+
+SELECT user_id, AVG(temperature) AS avg_temp FROM SensorData GROUP BY user_id;
+
+SELECT * FROM Alert WHERE level = 'High';
+
+SELECT Users.name, COUNT(Device.device_id) AS device_count FROM Users JOIN Device ON Users.user_id = Device.user_id GROUP BY Users.user_id;
+
+SELECT name, device_name FROM Device JOIN Users ON Device.user_id = Users.user_id WHERE location = 'Greenhouse';
+
+SELECT name, COUNT(*) AS alerts FROM Alert JOIN Users ON Alert.user_id = Users.user_id GROUP BY name HAVING COUNT(*) > 1;
+
+SELECT device_name, AVG(soil_moisture) AS avg_moisture FROM SensorData JOIN Device ON SensorData.device_id = Device.device_id GROUP BY device_name HAVING AVG(soil_moisture) < 30;
+
+SELECT name, AVG(soil_moisture) AS avg_moisture FROM SensorData JOIN Users ON SensorData.user_id = Users.user_id GROUP BY name HAVING AVG(soil_moisture) < 25;
