@@ -1,0 +1,85 @@
+Smart Farm Project:
+
+The "Smart Farm" project is a database management system designed to support a modern, technology-driven agricultural environment. The aim is to monitor soil conditions, temperature, and water needs using sensors connected to different devices managed by farm users. These readings can trigger alerts when certain thresholds are exceeded, enabling efficient water management and improved crop yield.
+
+The system tracks:
+
+Users managing farms
+
+Devices and sensors installed on farms
+
+Real-time sensor data (temperature, soil moisture, etc.)
+
+Alerts based on sensor readings
+
+Entities in the ERD:
+--------------------
+
+Users:
+------
+Description: Represents individuals who use the system to manage and monitor their farm.
+
+Attributes:
+
+user_id (Primary Key)
+
+name
+
+email
+
+password
+
+Device:
+-------
+
+Description: Represents physical equipment installed on a farm that gathers data.
+
+Attributes:
+
+device_id (Primary Key)
+
+user_id (Foreign Key to Users)
+
+device_name
+
+location
+
+SensorData:
+-----------
+
+Description: Holds data collected by devices. Each reading is linked to a user and a device.
+
+Attributes:
+
+data_id (Primary Key)
+
+user_id (Foreign Key to Users)
+
+device_id (Foreign Key to Device)
+
+temperature
+
+soil_moisture
+
+timestamp
+
+water_needed
+
+Alert:
+-------
+
+Description: Represents notifications triggered by sensor readings exceeding set thresholds.
+
+Attributes:
+
+alert_id (Primary Key)
+
+user_id (Foreign Key to Users)
+
+device_id (Foreign Key to Device)
+
+message
+
+level
+
+timestamp
